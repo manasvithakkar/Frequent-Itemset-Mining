@@ -18,6 +18,10 @@ enter the above four command line arguments.
 For example :
 Java Eclipse->Run->Run Configurations->Arguments->Program Arguments
 
+This code takes the following commandline arguments:
+minimum_support_count k input_file output_file
+
+Example :
 5 3 transactionDB.txt Output_5_3.txt
 
 The output for the above example looks like :
