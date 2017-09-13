@@ -134,8 +134,7 @@ public class DApriori {
 		        	for(int i=0;i<array.length;i++){
 		        		abc.add(array[i]);
 		        	}
-		        	//Set<Integer> newS = new HashSet<Integer>(abc);
-    			 //Set<Integer> newS = IntStream.of(array).boxed().collect(Collectors.toSet());
+		        	
 		        	tempSet.add(new HashSet<Integer>(abc));
 		        }  
 		        }
@@ -153,7 +152,6 @@ public class DApriori {
 	   public static void calculateFrequentItemsets(List<Set<Integer>> tempSet, FileWriter writer) throws IOException 
 	    {
 			List<int[]> finalSet = new ArrayList<>();
-			//List<Integer> myArray = new ArrayList<>();
 			if(level==2){
 			for(Set<Integer>s : tempSet){
 				List<Integer> myArray = new ArrayList<Integer>(s);
@@ -210,19 +208,18 @@ public class DApriori {
 				}
 				multiSet.clear();
 				multiSet = tempHash;
-				//tempHash.clear();
+				
 				
 			}
 		
 		  
 		  frequentOne_set = finalSet;
-		  //finalSet.clear();
 		  if(level>=k){
 			  for(int [] arr: frequentOne_set){
 				  
 				  for(int i=0;i<arr.length;i++){
 					  writer.write(getKeyFromValue(arr[i])+" ");
-					  //System.out.print(getKeyFromValue(arr[i])+" ");
+					 
 				  }
 				  List<Integer> arraylist = new ArrayList<>();
 				  for(int i=0;i<arr.length;i++){
@@ -230,7 +227,7 @@ public class DApriori {
 					  arraylist.add(arr[i]);
 				  }
 				  writer.write("("+multiSet.get(arraylist).size()+")"+"\n");
-				  //System.out.print("("+multiSet.get(arraylist).size()+")"+"\n");
+				  
 			  }
 			  
 		  }
@@ -297,8 +294,6 @@ public class DApriori {
 		      FileWriter writer = new FileWriter(f2); 
 		      
 		      // Writes the content to the file
-		      //writer.write("This\n is\n an\n example\n"); 
-		      
 			  minsup = Integer.parseInt(args[0]);
 			  k = Integer.parseInt(args[1]);
 			  convert_set();
@@ -322,8 +317,6 @@ public class DApriori {
 					    		
 					    		writer.write(getKeyFromValue(array[l]).toString()+"\t");
 					    		writer.write("("+One_set.get(array[l]).size()+")"+"\n");
-					    		//System.out.print(getKeyFromValue(array[l]).toString()+"\t");
-					    		//System.out.print("("+One_set.get(array[l]).size()+")"+"\n");
 					    		
 					    	}
 					    
